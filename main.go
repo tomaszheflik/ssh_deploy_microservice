@@ -31,7 +31,7 @@ type DeployJson struct {
 
 func (v Version) handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Simple REST service (ssh keys, deploy.jsom). Version: %s", v.app_version)
-	fmt.Fprintf(w,"\n")
+	fmt.Fprintf(w, "\n")
 }
 
 func sshkeys(w http.ResponseWriter, r *http.Request) {
@@ -78,6 +78,7 @@ func sshkeys(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Write(b)
 }
+
 func deployJson(w http.ResponseWriter, r *http.Request) {
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
